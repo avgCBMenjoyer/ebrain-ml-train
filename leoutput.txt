@@ -1,0 +1,124 @@
+Pytorch version: 2.2.2+cpu
+cuda version: None
+Python version: 3.12.2
+cpu
+RESHAPE
+shape of xtrain after reshape is (28, 28, 1, 60000).
+shape of xtest after reshape is (28, 28, 1, 10000).
+ 
+MOVE AXIS
+shape of xtrain after moveaxis is (60000, 1, 28, 28).
+shape of xtest after moveaxis is (10000, 1, 28, 28).
+ 
+LeNet(
+  (conv1): Conv2d(1, 6, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+  (conv2): Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
+  (fc1): Linear(in_features=400, out_features=120, bias=True)
+  (fc2): Linear(in_features=120, out_features=84, bias=True)
+  (fc3): Linear(in_features=84, out_features=10, bias=True)
+)
+TEST WITHOUT GRADIENT TRACKING
+conv1.weight torch.Size([6, 1, 5, 5]) True
+conv1.bias torch.Size([6]) True
+conv2.weight torch.Size([16, 6, 5, 5]) True
+conv2.bias torch.Size([16]) True
+fc1.weight torch.Size([120, 400]) True
+fc1.bias torch.Size([120]) True
+fc2.weight torch.Size([84, 120]) True
+fc2.bias torch.Size([84]) True
+fc3.weight torch.Size([10, 84]) True
+fc3.bias torch.Size([10]) True
+tensor(8.9400)
+ 
+TRAIN EPOCH 3
+[1,   100] loss: 2.302
+[1,   200] loss: 2.291
+[1,   300] loss: 2.275
+[1,   400] loss: 2.245
+[1,   500] loss: 2.162
+[1,   600] loss: 1.855
+[2,   100] loss: 1.116
+[2,   200] loss: 0.662
+[2,   300] loss: 0.529
+[2,   400] loss: 0.431
+[2,   500] loss: 0.386
+[2,   600] loss: 0.348
+[3,   100] loss: 0.310
+[3,   200] loss: 0.293
+[3,   300] loss: 0.254
+[3,   400] loss: 0.256
+[3,   500] loss: 0.234
+[3,   600] loss: 0.219
+It takes 80.429078 seconds.
+ 
+TEST EPOCH 3
+[1,   100] loss: 0.192
+[2,   100] loss: 0.171
+[3,   100] loss: 0.155
+It takes 13.495297 seconds.
+ 
+tensor(95.2700)
+ 
+TRAIN EPOCH 10
+[1,   100] loss: 2.302
+[1,   200] loss: 2.297
+[1,   300] loss: 2.290
+[1,   400] loss: 2.282
+[1,   500] loss: 2.266
+[1,   600] loss: 2.236
+[2,   100] loss: 2.150
+[2,   200] loss: 1.858
+[2,   300] loss: 1.193
+[2,   400] loss: 0.662
+[2,   500] loss: 0.481
+[2,   600] loss: 0.404
+[3,   100] loss: 0.341
+[3,   200] loss: 0.307
+[3,   300] loss: 0.289
+[3,   400] loss: 0.254
+[3,   500] loss: 0.228
+[3,   600] loss: 0.221
+[4,   100] loss: 0.200
+[4,   200] loss: 0.191
+[4,   300] loss: 0.177
+[4,   400] loss: 0.169
+[4,   500] loss: 0.174
+[4,   600] loss: 0.166
+[5,   100] loss: 0.143
+[5,   200] loss: 0.132
+[5,   300] loss: 0.145
+[5,   400] loss: 0.143
+[5,   500] loss: 0.127
+[5,   600] loss: 0.127
+[6,   100] loss: 0.117
+[6,   200] loss: 0.117
+[6,   300] loss: 0.119
+[6,   400] loss: 0.103
+[6,   500] loss: 0.111
+[6,   600] loss: 0.113
+[7,   100] loss: 0.101
+[7,   200] loss: 0.102
+[7,   300] loss: 0.096
+[7,   400] loss: 0.096
+[7,   500] loss: 0.101
+[7,   600] loss: 0.099
+[8,   100] loss: 0.088
+[8,   200] loss: 0.085
+[8,   300] loss: 0.082
+[8,   400] loss: 0.101
+[8,   500] loss: 0.088
+[8,   600] loss: 0.090
+[9,   100] loss: 0.074
+[9,   200] loss: 0.074
+[9,   300] loss: 0.086
+[9,   400] loss: 0.080
+[9,   500] loss: 0.077
+[9,   600] loss: 0.090
+[10,   100] loss: 0.069
+[10,   200] loss: 0.071
+[10,   300] loss: 0.064
+[10,   400] loss: 0.072
+[10,   500] loss: 0.081
+[10,   600] loss: 0.083
+It takes 253.969338 seconds.
+tensor(98.2000)
